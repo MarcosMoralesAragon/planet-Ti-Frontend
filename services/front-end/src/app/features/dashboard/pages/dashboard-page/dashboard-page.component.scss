@@ -1,0 +1,24 @@
+@use '../../../../../styles.scss' as s;
+
+.main{
+    width: 100%;
+}
+.posts{
+    padding-top: s.$border-space;
+}
+
+.posts__list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr) 0.2fr;
+}
+
+.posts__list__pagination{
+    grid-row: 4;
+    grid-column: 1/3;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
