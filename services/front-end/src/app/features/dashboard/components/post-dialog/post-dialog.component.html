@@ -1,0 +1,51 @@
+<section class="dialog">
+    <div class="dialog__header">
+        <ng-container *ngIf="data.originalPostId">
+            <span class="header">Translation for post already created</span>
+        </ng-container>
+        <ng-container *ngIf="!data.originalPostId">
+            <span class="header">Create translation for post</span>
+        </ng-container>
+        <button mat-button (click)="closeDialog()"> X </button>
+    </div>
+
+    <!-- Data of the post -->
+    <div class="group">
+        <span class="bold">ID : </span>
+        <span>{{data.id}}</span>
+    </div>
+    <div class="group">
+        <span class="bold">Author : </span>
+        <span>{{data.author}}</span>
+    </div>
+    <div class="group">
+        <span class="bold">Author fullname : </span>
+        <span>{{data.author_fullname}}</span>
+    </div>
+    <div class="group">
+        <span class="bold">Category : </span>
+        <span>{{data.category}}</span>
+    </div>
+    <div class="group">
+        <span class="bold">Language : </span>
+        <span>{{data.language}}</span>
+    </div>
+    <div class="group">
+        <span class="bold">Title : </span>
+        <span>{{data.title}}</span>
+    </div>
+
+    <ng-container *ngIf="data.originalPostId">
+        <div class="group">
+            <span class="bold">Original Post : </span>
+            <span>{{data.originalPostId}}</span>
+        </div>
+    </ng-container>
+
+    <!-- Create a translation -->
+    <ng-container *ngIf="!data.originalPostId">
+        <div class="button">
+            <button mat-raised-button color="primary" (click)="addTranslation()">Add translation</button>
+        </div>
+    </ng-container>
+</section>

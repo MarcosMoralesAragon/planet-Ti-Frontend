@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card__header">
+        <span id="author">{{postInfo.author}}</span>
+        <ng-container *ngIf="postInfo.originalPostId">
+            <button mat-raised-button color="warn" 
+            class="card__header__button" 
+            (click)="openDialog()">Location</button>
+        </ng-container>
+        <ng-container *ngIf="!postInfo.originalPostId">
+            <button mat-raised-button color="primary" 
+            class="card__header__button" 
+            (click)="openDialog()">Add translation</button>
+        </ng-container>
+    </div>
+    <div class="card__title">
+        <p>{{postInfo.title}}</p>
+    </div>
+</div>

@@ -4,7 +4,14 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { RouterModule } from '@angular/router';
 import { routes } from './dashboard.routing';
+import { PostCardComponent } from './components/post-card/post-card.component';
+import { PostDialogComponent } from './components/post-dialog/post-dialog.component'; 
 
+
+// Material imports
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 export const loader = ['en', 'es'].reduce((acc, lang) => {
   acc[lang] = () => import(`./i18n/forex.${lang}.json`);
@@ -13,10 +20,15 @@ export const loader = ['en', 'es'].reduce((acc, lang) => {
 
 @NgModule({
   declarations: [
-    DashboardPageComponent
+    DashboardPageComponent,
+    PostCardComponent,
+    PostDialogComponent
   ],
   imports: [
     CommonModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatSnackBarModule,
     RouterModule.forChild(routes),
   ],
   providers: [

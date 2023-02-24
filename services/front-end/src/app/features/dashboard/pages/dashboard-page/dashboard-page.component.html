@@ -1,1 +1,22 @@
-<p>dashboard-page works!</p>
+<article class="main">
+    <section class="posts">
+        <h1>Posts</h1>
+
+        <div class="posts__list">
+
+            <!-- Cards of the posts -->
+            <ng-container *ngFor="let post of postList">
+                <app-post-card [postInfo]="post" (translatePostEvent)="translatePost($event)"></app-post-card>
+            </ng-container>
+
+            <!-- Pagination -->
+            <div class="posts__list__pagination">
+                <ng-container *ngFor="let page of pagination">
+                    <button mat-button (click)="changePagination(page)">{{page}}</button>
+                </ng-container>
+            </div>
+            
+        </div>
+
+    </section>
+</article>
